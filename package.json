@@ -1,0 +1,58 @@
+{
+  "name": "aka",
+  "displayName": "aka",
+  "description": "docstring",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.106.1"
+  },
+  "keywords": [
+    "notebookRenderer"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension/extension.js",
+  "browser": "./out/extension/extension.web.js",
+  "contributes": {
+    "notebookRenderer": [
+      {
+        "id": "aka",
+        "entrypoint": "./out/client/index.js",
+        "displayName": "aka",
+        "mimeTypes": ["x-application/custom-json-output"]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "webpack --mode production",
+    "lint": "eslint src",
+    "watch": "webpack --mode development --watch",
+    "pretest": "webpack --mode development && npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/webpack-env": "^1.18.8",
+    "typescript-eslint": "^8.46.3",
+    "@types/vscode-notebook-renderer": "^1.72.4",
+    "@types/vscode": "^1.106.1",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.39.1",
+    "fork-ts-checker-webpack-plugin": "^9.1.0",
+    "glob": "^11.0.3",
+    "mocha": "^11.7.5",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "vscode-notebook-error-overlay": "^1.1.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "util": "^0.12.5",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
